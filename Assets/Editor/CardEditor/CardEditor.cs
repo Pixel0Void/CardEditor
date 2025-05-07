@@ -10,13 +10,19 @@ using System.Linq;
 public class CardEditor : EditorWindow
 {
     [SerializeField] private VisualTreeAsset m_TabbedMenuTree;
+    [SerializeField] private VisualTreeAsset m_CardDetailsTree;
     [SerializeField] private VisualTreeAsset m_ContentTabTree;
     [SerializeField] private VisualTreeAsset m_LevelUpTree;
     [SerializeField] private VisualTreeAsset m_EntryTemplate;
     [SerializeField] private Sprite m_DefaultIcon;
 
+    private static List<BaseCard> m_Cards = new List<BaseCard>();
+    private BaseCard m_ActiveCard;
     private static List<LevelUps> m_LevelUps = new List<LevelUps>();
     private LevelUps m_ActiveLevelUp;
+    private VisualElement m_DisplayIcon;
+    private VisualElement m_RightPane;
+    private ListView m_CardsListView;
     private ListView m_LevelsListView;
     private TabbedMenuController m_Controller;
 
@@ -35,6 +41,7 @@ public class CardEditor : EditorWindow
     {
         CreateTypes();
         ShowTabbedMenu();
+        CreateGUIForCards();
         CreateGUIForLevels();
     }
 
@@ -70,6 +77,17 @@ public class CardEditor : EditorWindow
             Directory.CreateDirectory(m_LevelUpsPath);
             AssetDatabase.Refresh();
         }
+    }
+
+    private string CreateDirectoryPathByType(CardTypeEnum type)
+    {
+        string path = "Assets/ScriptableObjects/Cards/" + type.ToString();
+        if(!Directory.Exists(path))
+        {
+            Directory.CreateDirectory(path);
+        }
+        AssetDatabase.Refresh();
+        return path;
     }
 
     #region GenericMethods
@@ -129,7 +147,11 @@ public class CardEditor : EditorWindow
         }
 
         T newOne = CreateInstance<T>();
-        if (newOne is LevelUps clu)
+        if(newOne is BaseCard bc)
+        {
+            bc.Name = itemName;
+        }
+        else if (newOne is LevelUps clu)
         {
             clu.Name = itemName;
         }
@@ -140,6 +162,82 @@ public class CardEditor : EditorWindow
         active = itemsSource[itemsSource.Count - 1];
         listView.Rebuild();
         listView.SetSelection(itemsSource.Count - 1);
+    }
+
+    #endregion
+
+    #region Cards
+
+    private void CreateGUIForCards()
+    {
+        var root = rootVisualElement.Q<VisualElement>("CardsContent");
+        CreateGUIs(out m_Cards, root, out m_CardsListView, m_EntryTemplate.CloneTree,
+        (item, index) =>
+        {
+            item.Q<VisualElement>("Icon").style.backgroundImage = m_Cards[index].Icon == null ? m_DefaultIcon.texture : m_Cards[index].Icon.texture;
+            item.Q<Label>("Name").text = m_Cards[index].name;
+        }, OnEntrySelectionChange, out m_RightPane,
+        () => Add("New Card", m_Cards, CreateDirectoryPathByType(CardTypeEnum.Common), m_CardsListView, ref m_ActiveCard),
+        () => Remove(m_ActiveCard, m_Cards, m_RightPane, m_CardsListView, ref m_ActiveCard));
+
+        m_RightPane = m_CardDetailsTree.Instantiate();
+        m_DisplayIcon = m_RightPane.Q<VisualElement>("Icon");
+        root.Q<TwoPaneSplitView>().RemoveAt(1);
+        root.Q<TwoPaneSplitView>().Add(m_RightPane);
+        m_RightPane.Q<ObjectField>("IconPicker").RegisterValueChangedCallback(evt =>
+        {
+            Sprite newSprite = evt.newValue as Sprite;
+            m_ActiveCard.Icon = newSprite;
+            m_DisplayIcon.style.backgroundImage = newSprite == null ? m_DefaultIcon.texture : newSprite.texture;
+            m_CardsListView.Rebuild();
+        });
+        m_CardsListView.SetSelection(0);
+    }
+
+    private void OnEntrySelectionChange(IEnumerable<object> selectedItems)
+    {
+        m_ActiveCard = (BaseCard)selectedItems.FirstOrDefault();
+        rootVisualElement.Q<Button>("RemoveBtn").SetEnabled(!(m_ActiveCard == null));
+        if (m_ActiveCard == null)
+        {
+            m_RightPane.style.visibility = Visibility.Hidden;
+            return;
+        }
+
+        m_RightPane.style.visibility = Visibility.Visible;
+
+        SerializedObject so = new SerializedObject(m_ActiveCard);
+        m_RightPane.Bind(so);
+
+        if (m_ActiveCard.Icon != null)
+            m_DisplayIcon.style.backgroundImage = m_ActiveCard.Icon.texture;
+
+
+        rootVisualElement.Q<TextField>("ItemName").RegisterValueChangedCallback((evt) =>
+        {
+            AssetDatabase.RenameAsset(AssetDatabase.GetAssetPath(m_ActiveCard), evt.newValue);
+            m_CardsListView.Rebuild();
+        });
+
+        rootVisualElement.Q<EnumField>("ItemType").RegisterValueChangedCallback((evt) =>
+        {
+            int currentLevelCount = m_ActiveCard.Properties.Count;
+            int targetLevelCount = (int)m_ActiveCard.Type;
+
+            if (currentLevelCount > targetLevelCount)
+            {
+                m_ActiveCard.Properties.RemoveRange(targetLevelCount, currentLevelCount - targetLevelCount);
+            }
+            else
+            {
+                for (int i = currentLevelCount; i < targetLevelCount; i++)
+                {
+                    m_ActiveCard.Properties.Add(new Properties());
+                }
+            }
+            string result = AssetDatabase.MoveAsset(AssetDatabase.GetAssetPath(m_ActiveCard), CreateDirectoryPathByType(m_ActiveCard.Type) + $"/{m_ActiveCard.name}.asset");
+            AssetDatabase.Refresh();
+        });
     }
 
     #endregion
