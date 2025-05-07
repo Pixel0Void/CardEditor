@@ -16,7 +16,7 @@ MonoBehaviour:
   Name: Rocket
   Type: 5
   Cost: 4
-  Description: 
+  Description: This is a description for Rocket.
   Properties:
   - Damage: 0
     HitPoint: 0

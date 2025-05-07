@@ -16,7 +16,7 @@ MonoBehaviour:
   Name: Radar
   Type: 3
   Cost: 6
-  Description: 
+  Description: This is a description for Radar.
   Properties:
   - Damage: 0
     HitPoint: 0

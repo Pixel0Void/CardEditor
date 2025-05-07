@@ -16,7 +16,7 @@ MonoBehaviour:
   Name: Oil
   Type: 8
   Cost: 3
-  Description: 
+  Description: This is a description for Oil.
   Properties:
   - Damage: 0
     HitPoint: 0

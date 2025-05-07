@@ -16,7 +16,7 @@ MonoBehaviour:
   Name: Three Rocket
   Type: 3
   Cost: 7
-  Description: 
+  Description: This is a description for Three Rocket.
   Properties:
   - Damage: 0
     HitPoint: 0

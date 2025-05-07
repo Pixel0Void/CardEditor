@@ -16,7 +16,7 @@ MonoBehaviour:
   Name: Dynamic Shield
   Type: 3
   Cost: 5
-  Description: 
+  Description: This is a description for Dynamic Shield.
   Properties:
   - Damage: 0
     HitPoint: 0

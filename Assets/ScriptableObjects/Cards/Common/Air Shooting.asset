@@ -15,8 +15,8 @@ MonoBehaviour:
   Icon: {fileID: 0}
   Name: Air Shooting
   Type: 8
-  Cost: 1
-  Description: 
+  Cost: 2
+  Description: This is a description for Air Shooting.
   Properties:
   - Damage: 0
     HitPoint: 0

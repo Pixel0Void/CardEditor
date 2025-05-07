@@ -16,7 +16,7 @@ MonoBehaviour:
   Name: Shield
   Type: 8
   Cost: 2
-  Description: 
+  Description: This is a description for Shield.
   Properties:
   - Damage: 0
     HitPoint: 0
