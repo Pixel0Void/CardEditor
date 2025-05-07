@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Editor/CardEditor/TabbedMenu.uss?fileID=7433441132597879392&amp;guid=1ab0bd45c20ce3d44b27ab0ff3b827f3&amp;type=3#TabbedMenu" />
+    <ui:VisualElement name="TabbedMenu">
+        <ui:VisualElement name="tabs" style="background-color: rgb(40, 40, 40); align-self: auto; height: auto;">
+            <ui:Label name="CardsTab" text="Cards" class="tab currentlySelectedTab" style="color: rgb(255, 255, 255);" />
+            <ui:Label name="LevelUpsTab" text="Level Ups" class="tab" style="color: rgb(255, 255, 255);" />
+        </ui:VisualElement>
+        <ui:VisualElement name="tabContent" class="tabContent" style="align-self: auto; background-color: rgba(255, 255, 255, 0); flex-grow: 1; height: 1000px;">
+            <ui:VisualElement name="CardsContent" style="flex-grow: 1;" />
+            <ui:VisualElement name="LevelUpsContent" class="unselectedContent" style="flex-grow: 1;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 3f566c97833f18b47bf62f2b84bbd833
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_ViewDataDictionary: {instanceID: 0}
+  - m_TabbedMenuTree: {fileID: 9197481963319205126, guid: 7c1133349bfc9b84295385256fe0f604, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
