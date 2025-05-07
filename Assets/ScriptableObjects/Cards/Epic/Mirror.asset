@@ -16,7 +16,7 @@ MonoBehaviour:
   Name: Mirror
   Type: 5
   Cost: 1
-  Description: 
+  Description: This is a description for Mirror.
   Properties:
   - Damage: 0
     HitPoint: 0
