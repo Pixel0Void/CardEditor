@@ -4,6 +4,8 @@ using UnityEngine.UIElements;
 
 public class CardEditor : EditorWindow
 {
+    [SerializeField] private VisualTreeAsset m_TabbedMenuTree;
+    private TabbedMenuController m_Controller;
 
     [MenuItem("Window/CardEditor")]
     public static void ShowCardEditr()
@@ -16,6 +18,12 @@ public class CardEditor : EditorWindow
 
     public void CreateGUI()
     {
-        
+        ShowTabbedMenu();
+    }
+
+    private void ShowTabbedMenu()
+    {
+        rootVisualElement.Add(m_TabbedMenuTree.CloneTree());
+        m_Controller = new(rootVisualElement.Q<VisualElement>("TabbedMenu"));
     }
 }
