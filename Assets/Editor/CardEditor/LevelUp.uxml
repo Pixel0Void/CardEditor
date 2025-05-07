@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1;">
+        <ui:ListView show-border="true" reorderable="true" header-title="Levels" show-add-remove-footer="false" reorder-mode="Animated" binding-path="Costs" show-foldout-header="true" virtualization-method="DynamicHeight" show-bound-collection-size="false" />
+    </ui:VisualElement>
+</ui:UXML>
