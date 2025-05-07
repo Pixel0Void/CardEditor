@@ -15,9 +15,9 @@ MonoBehaviour:
   Name: Legendary
   Type: 3
   Costs:
-  - CardsCount: 0
+  - CardsCount: 1
     GoldCount: 0
-  - CardsCount: 0
-    GoldCount: 0
-  - CardsCount: 0
-    GoldCount: 0
+  - CardsCount: 4
+    GoldCount: 1000
+  - CardsCount: 8
+    GoldCount: 3000
