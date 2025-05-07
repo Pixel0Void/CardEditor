@@ -6,6 +6,10 @@ MonoImporter:
   defaultReferences:
   - m_ViewDataDictionary: {instanceID: 0}
   - m_TabbedMenuTree: {fileID: 9197481963319205126, guid: 7c1133349bfc9b84295385256fe0f604, type: 3}
+  - m_ContentTabTree: {fileID: 9197481963319205126, guid: 892b3754bb556244aa8bee4081fbf6fb, type: 3}
+  - m_LevelUpTree: {fileID: 9197481963319205126, guid: 2d44c0a774e5c494c868a52b3b47f61e, type: 3}
+  - m_EntryTemplate: {fileID: 9197481963319205126, guid: aef7a4d702866764f8121831f11bb280, type: 3}
+  - m_DefaultIcon: {fileID: 21300000, guid: 0b859b69e05422a4eb30b42c7640da98, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:VisualElement name="Container" style="flex-grow: 1; flex-direction: row; margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px;">
+        <ui:VisualElement name="ItemsTab" style="width: 100%;">
+            <ui:VisualElement name="Header" style="flex-direction: row; border-bottom-color: rgb(0, 0, 0); margin-bottom: 5px; min-width: auto; max-width: none; max-height: 30px; min-height: 30px;">
+                <ui:Button text="+" display-tooltip-when-elided="true" name="AddBtn" style="flex-grow: 1; -unity-font-style: bold; font-size: 24px;" />
+                <ui:Button text="-" display-tooltip-when-elided="true" name="RemoveBtn" style="flex-grow: 1; -unity-font-style: bold; font-size: 24px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
