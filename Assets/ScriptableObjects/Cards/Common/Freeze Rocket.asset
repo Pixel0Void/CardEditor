@@ -16,7 +16,7 @@ MonoBehaviour:
   Name: Freeze Rocket
   Type: 8
   Cost: 4
-  Description: 
+  Description: This is a description for Freeze Rocket.
   Properties:
   - Damage: 0
     HitPoint: 0

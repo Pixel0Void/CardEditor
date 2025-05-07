@@ -16,7 +16,7 @@ MonoBehaviour:
   Name: Sticky Rocket
   Type: 8
   Cost: 2
-  Description: 
+  Description: This is a description for Sticky Rocket.
   Properties:
   - Damage: 0
     HitPoint: 0

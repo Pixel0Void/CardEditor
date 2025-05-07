@@ -16,7 +16,7 @@ MonoBehaviour:
   Name: Poison
   Type: 8
   Cost: 5
-  Description: 
+  Description: This is a description for Poison.
   Properties:
   - Damage: 0
     HitPoint: 0
