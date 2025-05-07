@@ -1,0 +1,27 @@
+#tabs {
+    flex-direction: row;
+    background-color: rgb(229, 223, 223);
+    -unity-font-style: bold;
+    font-size: 14px;
+    flex-grow: 0;
+}
+
+.tab {
+    flex-grow: 1;
+    -unity-text-align: upper-center;
+}
+
+.currentlySelectedTab {
+    background-color: rgb(84, 84, 84);
+}
+
+#tabContent {
+    background-color: rgb(255, 255, 255);
+    font-size: 12px;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.unselectedContent {
+    display: none;
+}
