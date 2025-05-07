@@ -15,19 +15,19 @@ MonoBehaviour:
   Name: Common
   Type: 8
   Costs:
-  - CardsCount: 0
+  - CardsCount: 1
     GoldCount: 0
-  - CardsCount: 0
-    GoldCount: 0
-  - CardsCount: 0
-    GoldCount: 0
-  - CardsCount: 0
-    GoldCount: 0
-  - CardsCount: 0
-    GoldCount: 0
-  - CardsCount: 0
-    GoldCount: 0
-  - CardsCount: 0
-    GoldCount: 0
-  - CardsCount: 0
-    GoldCount: 0
+  - CardsCount: 25
+    GoldCount: 10
+  - CardsCount: 50
+    GoldCount: 100
+  - CardsCount: 150
+    GoldCount: 250
+  - CardsCount: 400
+    GoldCount: 700
+  - CardsCount: 800
+    GoldCount: 1500
+  - CardsCount: 1500
+    GoldCount: 3000
+  - CardsCount: 3000
+    GoldCount: 5000
