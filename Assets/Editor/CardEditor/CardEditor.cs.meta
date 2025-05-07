@@ -6,6 +6,7 @@ MonoImporter:
   defaultReferences:
   - m_ViewDataDictionary: {instanceID: 0}
   - m_TabbedMenuTree: {fileID: 9197481963319205126, guid: 7c1133349bfc9b84295385256fe0f604, type: 3}
+  - m_CardDetailsTree: {fileID: 9197481963319205126, guid: d78252b04e1b64247afa2fc1752e3d05, type: 3}
   - m_ContentTabTree: {fileID: 9197481963319205126, guid: 892b3754bb556244aa8bee4081fbf6fb, type: 3}
   - m_LevelUpTree: {fileID: 9197481963319205126, guid: 2d44c0a774e5c494c868a52b3b47f61e, type: 3}
   - m_EntryTemplate: {fileID: 9197481963319205126, guid: aef7a4d702866764f8121831f11bb280, type: 3}
