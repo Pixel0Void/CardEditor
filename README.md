@@ -65,11 +65,13 @@ This tool allows game developers or designers to streamline the process of editi
 
 ## 🖼️ Screenshots
 
-(Screenshots/CommonLevelUps.jpg) 
-(Screenshots/EpicLevelUps.jpg)
-(Screenshots/LegendaryLevelUps.jpg)
-(Screenshots/TNTBox.jpg)
-(Screenshots/TNTBoxPropertiesList.jpg)
+<p float="left">
+  <img src="Screenshots/CommonLevelUps.jpg" width="250" />
+  <img src="Screenshots/EpicLevelUps.jpg" width="250" />
+  <img src="Screenshots/LegendaryLevelUps.jpg" width="250" />
+  <img src="Screenshots/TNTBox.jpg" width="250" />
+  <img src="Screenshots/TNTBoxPropertiesList.jpg" width="250" />
+</p>
 
 ---
 
